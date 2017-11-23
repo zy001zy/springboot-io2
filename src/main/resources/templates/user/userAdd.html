@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>user</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>添加用户</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/add}"  method="post">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="salesDH">单号</label>
+            <div class="col-sm-10">
+                <input class="form-control" cols="20" id="salesDH" maxlength="250" name="salesDH"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label text-right"><span color="red">*</span>客户</label>
+            <div class="col-sm-8">
+                <select class="form-control select2 select2-nomal" id="salesName" name="salesName">
+                    <option value="">--请选择--</option>
+                    <option value="laal">laal</option>
+                    <option value="陈经理">陈经理</option>
+                    <option value="李四">李四</option>
+                    <option value="某公司">某公司</option>
+                    <option value="王五">王五</option>
+                    <option value="张三">张三</option>
+                </select>
+            </div>
+        </div>
+<div class="form-group">
+                <label class="col-sm-4 control-label text-right"><span class="red">*</span>销售日期</label>
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input class="form-control form-pickdate" id="saDate" name="saDate" type="text"  />
+                           <span class="input-group-addon time-icon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                           </span>
+                     </div>
+                </div>
+            </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="saYsum">预计收款金额</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control w240" id="saYsum" maxlength="12" name="saYsum" placeholder="0.00" type="text" value="" />
+                    <span class="input-group-addon">元</span>
+                </div>
+            </div>
+            <label class="col-sm-2 control-label">预计收款日期</label>
+
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control form-pickdate" id="yjsDate" name="yjsDate" type="text"  />
+                        <span class="input-group-addon time-icon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="salesType">发货方式</label>
+            <div class="col-sm-4">
+                <select class="form-control select2 select2-nomal" data-val="true" data-val-number="The field 发货方式 must be a number." id="salesType" name="salesType">
+                    <option value="">--请选择--</option>
+                    <option value="1">客户自提</option>
+                    <option value="2">我司发运</option>
+                    <option value="3">我司自送</option>
+                </select>
+            </div>
+            <label class="col-sm-2 control-label">预计发货日期</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control form-pickdate" id="yjfDate" name="yjfDate" type="text" />
+                        <span class="input-group-addon time-icon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                </div>
+            </div>
+        <div class="form-group">
+            <label for="saDj" class="col-sm-2 control-label">登记情况</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="saDj" id="saDj">
+                    <option value="">--请选择--  </option>
+                    <option value="1">未登记</option>
+                    <option value="2">登记完成</option>
+                </select>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="saZt" class="col-sm-2 control-label">状态</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="saZt" id="saZt">
+                        <option value="">--请选择--  </option>
+                        <option value="1">审核中</option>
+                        <option value="2">审核完成</option>
+                    </select>
+                </div>
+                </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="saSum">销售金额</label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input class="form-control w240" id="saSum" maxlength="12" name="saSum" placeholder="0.00" type="text" value="" />
+                        <span class="input-group-addon">元</span>
+                    </div>
+                </div>
+                </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="ywName">业务员</label>
+            <div class="col-sm-10">
+                    <input class="form-control" cols="20" id="ywName" maxlength="250" name="ywName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="beizhu">备注</label>
+            <div class="col-sm-10">
+                    <textarea class="form-control" cols="20" id="beizhu" maxlength="250" name="beizhu" rows="2">
+</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="重置" class="btn btn-info" />
+            </div>
+        </div>
+     </div>
+    </form>
+</div>
+</body>
+</html>
