@@ -44,6 +44,8 @@ public class SalesController {
     public String add(Sales user) {
         salesService.save(user);
         return "redirect:/salesList";
+
+
     }
     @RequestMapping("/getUser")
     @Cacheable(value="sales-key")
