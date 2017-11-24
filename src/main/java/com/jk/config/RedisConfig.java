@@ -34,6 +34,8 @@ public class RedisConfig extends CachingConfigurerSupport{
                     sb.append(obj.toString());
                 }
                 return sb.toString();
+
+
             }
         };
     }
